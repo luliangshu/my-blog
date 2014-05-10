@@ -19,7 +19,7 @@ module MyBlog
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    config.assets.precompile += [ Proc.new {|path| File.basename(path) =~ /^[^_].*\.\w+$/} ]
+    config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js','monokai_theme.css','blog.css','html5.js','ie.css','highlight.pack.js']
+    # config.assets.precompile += [ Proc.new {|path| File.basename(path) =~ /^[^_].*\.\w+$/} ]
   end
 end
