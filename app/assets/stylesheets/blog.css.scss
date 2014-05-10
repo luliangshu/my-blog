@@ -1,0 +1,170 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+table{
+  border-collapse: collapse;
+  td{
+    padding:0 5px;
+  }
+}
+a{
+  text-decoration:none;
+  color: #000;
+}
+.clearfix{
+  zoom: 1;
+}
+.clearfix:after{
+  clear:both;
+  content:'';
+  display: table;
+}
+body{
+  background:url(/assets/bg.jpg);
+  font: 14px/2 Helvetica,arial,'宋体';
+  padding-bottom:100px;
+}
+header{
+  width: 90%;
+  margin: 0 auto;
+  h1{
+    a{
+      width: 196px;
+      height: 43px;
+      display:block;
+      background: url(/assets/logo@2x.png) no-repeat;
+      background: url(/assets/logo.png) no-repeat/9;
+      background-size: 196px 43px;
+      margin-top: 20px;
+    }
+  }
+  nav{
+    float: right;
+    a{
+    margin-left: 20px;
+    }
+  }
+}
+footer{
+  text-align: center;
+  background: #29AA91;
+  color: #FFF;
+  a{
+    color: #74D8AC;
+  }
+}
+.main {
+  min-height: 400px;
+  width: 90%;
+  margin: 0 auto;
+}
+.main_content{
+  height: 100%;
+  width: 100%;
+  float: left;
+  .article_list{
+    height: 100%;
+    padding: 20px 300px 20px 20px;
+    .article_title{
+      font-size: 32px;
+      font-weight: lighter;
+      color: #16A085;
+      a{
+        color: #16A085;
+      }
+    }
+    .article_info{
+      padding-bottom: 8px;
+      color: #719B92;
+      a{
+        color: #719B92;
+        &:hover{
+          text-decoration:underline;
+        }
+      }
+    }
+    .article_message{
+    }
+    .tag_more{
+      margin: 15px 0;
+      a{
+        color: #666;
+        float:right;
+      }
+    }
+    code{
+      overflow:scroll;
+    }
+  }
+}
+.aside_bar{
+  width: 280px;
+  margin-left: -280px;
+  height: 100%;
+  float: right;
+  .aside_list{
+    margin-top: 10px;
+    h3{
+      color: #16A085;
+      border-bottom: 2px solid #16A085;
+      padding-bottom:5px;
+      margin-bottom:5px;
+    }
+    div{
+      padding-left: 10px;
+    }
+  }
+  .article_category{
+    ul{
+      list-style:none;
+      li{
+        line-height:22px;
+      }
+    }
+  }
+}
+
+.paginate{
+  text-align:center;
+  a{
+    display: inline-block;
+    padding:0 10px;
+    border: 1px solid #000;
+  }
+  .paginate_count{
+
+  }
+  .current_paginate{
+    border-color:#16A085;
+    background: #16A085;
+    color: #FFF;
+  }
+}
+
+
+
+@media (max-width: 768px){
+  body{
+    font-size: 14px;
+  }
+  .aside_bar{
+    display:none;
+  }
+  .main_content{
+    .article_list{
+      padding:10px 5px;
+    }
+  }
+  .main_content{
+    .article_list{
+      .article_title{
+        font-size: 16px;
+      }
+      .article_info{
+        padding-bottom: 0;
+      }
+    }
+  }
+}

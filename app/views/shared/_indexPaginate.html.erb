@@ -1,0 +1,16 @@
+<div class="paginate">
+  <% if @offset != 0 %>
+  <% @prev_path = "/article?page=#{@offset/@limit}" %>
+  <%= link_to "上一页", "#{@prev_path}" %>
+  <% end %>
+
+  <% 1.upto( @count % @limit == 0 ? @count/@limit : @count/@limit + 1 ) do |i| %>
+    <% @current_path = "/article?page=#{i}" %>
+    <%= link_to "#{i}", "#{@current_path}", class: "paginate_count #{"current_paginate" if params[:page].to_i == i || (params[:page] == nil && i == 1)}"%>
+  <% end %>
+
+  <% if (@offset/@limit != @count/@limit) && (@offset + @limit != @count) %>
+    <% @next_path = "/article?page=#{@offset/@limit + 2}"%>
+    <%= link_to "下一页", "#{@next_path}"%>
+  <% end %>
+</div>

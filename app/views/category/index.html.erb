@@ -1,0 +1,26 @@
+<% @articles.each do |article| %>
+  <% @title = "星米的博客 - 分类 - #{article.tag}" %>
+<% @keywords = "#{article.tag}" %>
+<% @description = "#{article.tag}" %>
+
+  <article>
+    <h2 class="article_title"><%= link_to "#{article.title}", article_path(article) %></h2>
+    <p class="article_info">
+      发布于：<%= post_time(article) %>
+      <% article.categorys.each do |category|%>
+        <%= link_to "#{category.category}", category_path(:category => category.category )%>&nbsp;&nbsp;
+      <% end%>
+      点击率：<%= article.vistor %>
+    </p>
+    <div class="article_message">
+      <%= sanitize article.content.split("<p>&lt;!-- more --&gt;</p>")[0] %>
+    </div>
+    <div class="tag_more clearfix">
+      <span><%= article.tag%></span>
+      <%= link_to "阅读全文",article_path(article), class: "more" %>
+    </div>
+  </article>
+<% end%>
+
+<%= render :partial => "shared/categoryPaginate" %>
+

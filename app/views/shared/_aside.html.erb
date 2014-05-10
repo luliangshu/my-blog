@@ -1,0 +1,31 @@
+<aside class="aside_bar">
+  <div class="aside_list about_me">
+    <h3>关于我</h3>
+    <div>
+      星米 前端攻城师，中国 上海<br/>
+      Email : lu501037@gmail.com
+    </div>
+  </div>
+  <div class="aside_list article_category">
+    <h3>文章分类</h3>
+    <div>
+      <ul>
+        <% Category.all.each do |category| %>
+          <li><%= link_to "#{category.category}", category_path(:category => category.category) %>(<%= category.articles.length%>)</li>
+        <% end %>
+      </ul> 
+    </div>
+  </div>
+   <!-- <div class="aside_list article_tag">
+    <h3>标签</h3>
+    <div>
+     <a href="#">CSS</a>
+    </div>
+  </div> -->
+  <div class="aside_list friendly_list">
+    <h3>友情链接</h3>
+    <div>
+      <!-- <a href="#">CSS</a> -->
+    </div>
+  </div>
+</aside>

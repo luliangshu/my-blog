@@ -1,0 +1,24 @@
+<% @title = "星米的博客" %>
+<% @keywords = "前端开发,前端工程师,html5,css3,JavaScript,响应式设计,浏览器兼容,ruby on rails, ruby, sinatra," %>
+<% @description = "记录我的前端开发与ruby旅程，专注前端开发，关心用户体验." %>
+<% @articles.each do |article| %>
+  <article>
+    <h2 class="article_title"><%= link_to "#{article.title}", article_path(article) %></h2>
+    <p class="article_info">
+      发布于：<%= post_time(article) %>
+      <% article.categorys.each do |category|%>
+        <%= link_to "#{category.category}", category_path(:category => category.category )%>&nbsp;&nbsp;
+      <% end%>
+      点击率：<%= article.vistor %>
+    </p>
+    <div class="article_message">
+      <%= sanitize article.content.split("<p>&lt;!-- more --&gt;</p>")[0] %>
+    </div>
+    <div class="tag_more clearfix">
+      <span><%= article.tag%></span>
+      <%= link_to "阅读全文",article_path(article), class: "more" %>
+    </div>
+  </article>
+<% end %>
+
+<%= render :partial => "shared/indexPaginate" %>
