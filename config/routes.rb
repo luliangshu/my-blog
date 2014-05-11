@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdmin::Engine => '/luliangshu', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.

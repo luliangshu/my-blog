@@ -15,7 +15,7 @@
       <%= sanitize article.content.split("<p>&lt;!-- more --&gt;</p>")[0] %>
     </div>
     <div class="tag_more clearfix">
-      <span><%= article.tag%></span>
+      <span><%#= article.tag%></span>
       <%= link_to "阅读全文",article_path(article), class: "more" %>
     </div>
   </article>
