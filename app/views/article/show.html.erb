@@ -11,7 +11,7 @@
       点击率：<%= @article.vistor %>
     </p>
     <div class="article_message">
-      <%= sanitize @article.content %>
+      <%= sanitize @article.content.sub! "<p>&lt;!-- more --&gt;</p>","" %>
     </div>
     <div class="tag_more clearfix">
       <span><%#= @article.tag %></span>
