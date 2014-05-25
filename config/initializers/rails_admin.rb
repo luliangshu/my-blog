@@ -35,6 +35,13 @@ RailsAdmin.config do |config|
     visible false
   end
 
+  config.model Visitor do
+    field :ip
+    field :city
+    field :referer
+    field :this_url
+    field :created_at
+  end
 
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration

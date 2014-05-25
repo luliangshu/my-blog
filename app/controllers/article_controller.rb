@@ -18,6 +18,12 @@ class ArticleController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+
+    ip = request.remote_ip
+    referer = request.referer
+    loc = request.location.city
+    url =  request.original_url
+    Visitor.new(:ip => ip, :referer => referer, :city => loc, :this_url => url).save
     @article.update_attributes(:vistor => (@article.vistor + 1))
   end
 end 
