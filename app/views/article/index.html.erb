@@ -12,7 +12,7 @@
       点击率：<%= article.vistor %>
     </p>
     <div class="article_message">
-      <%= sanitize article.content.split("<p>&lt;!-- more --&gt;</p>")[0] %>
+      <%= raw article.content.split("<p>&lt;!-- more --&gt;</p>")[0] %>
     </div>
     <div class="tag_more clearfix">
       <span><%#= article.tag%></span>
