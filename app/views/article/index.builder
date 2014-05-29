@@ -1,7 +1,7 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "星米的博客"
+    xml.title "星米‘s - 前端开发博客"
     xml.description "web前端开发"
     xml.link root_path
     
